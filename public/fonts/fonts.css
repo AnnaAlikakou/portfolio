@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'SpButchLiteBold';
+    src: url('/fonts/SpButchLiteBold-8O88B.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpButchLiteLight';
+    src: url('/fonts/SpButchLiteLight-Yq338.woff2') format('woff2');
+    font-weight: light;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpButchLiteMedium';
+    src: url('/fonts/SpButchLiteMedium-rv229.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

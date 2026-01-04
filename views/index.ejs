@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <%- include("header.ejs") %>
+    <div class="main">
+
+    <!-- HERO SECTION HERE -->
+    <div id="top" class="hero custom_row section">
+        <img src="images/me.jpg" alt="Image Here">
+        <h1 id="lettering" class="right"></h1>
+    </div>
+
+    <!-- ABOUT SECTION HERE -->
+    <div id="about" class="custom_row section">
+        <p class="mobileTitle">About</p>
+        Hi! My name is Anna Maria Alikakou and i based in Athens, Greece!
+        <br><br>I am a Junior Web Developer with hands-on experience in building responsive, user-friendly websites using modern web technologies. I specialize in frontend development and WordPress, creating custom themes and layouts with a strong focus on clean code, performance, and usability
+        <br><br>My core skill set includes HTML5, CSS (SCSS/LESS), JavaScript, PHP, jQuery and Bootstrap 5. I have experience developing custom WordPress websites, implementing SEO best practices, and working with basic server configurations.
+        <br><br>In addition to my current experience, I am actively expanding my knowledge in backend and full-stack development. I am learning how to work with APIs, databases, SQL and PostgreSQL, as well as modern JavaScript frameworks and tools such as React.js, Node.js, and Express.js. I’m also exploring authentication systems and application architecture to better understand how complete web applications are built.
+        <br><br>I enjoy working in collaborative environments and take pride in writing maintainable, well-structured code. I’m highly motivated to continue learning, improve my technical skills, and contribute to meaningful projects that deliver real value to users.
+    </div>
+
+    <!-- EDUCATION SECTION HERE -->
+    <div id="education" class="custom_row section">
+        <p class="mobileTitle">Education</p>
+          <div class="education-item">
+        <h3>Web Application Developer</h3>
+        <p class="education-place">Global Cert Dedicated</p>
+        <p class="education-date">09/2022 – 01/2023</p>
+        <p class="education-desc">HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="education-item">
+        <h3>Web App Development Specialist</h3>
+        <p class="education-place">University of West Attica</p>
+        <p class="education-desc">HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="education-item">
+        <h3>The Complete Full-Stack Web Development Bootcamp</h3>
+        <p class="education-place">Udemy</p>
+    </div>
+    </div>
+
+    <!-- SKILLs SECTION HERE -->
+    <div id="skills" class="custom_row section">
+        <p class="mobileTitle">Skills</p>
+       <div class="skills_inner">
+        <p class="title">Frontend Development</p>
+        <ul class="hidden_text">
+            <li>HTML5</li>
+            <li>CSS3 (SCSS / LESS)</li>
+            <li>JavaScript (ES6+)</li>
+            <li>Bootstrap 5</li>
+            <li>Responsive Web Design</li>
+        </ul>
+       </div>
+       <div class="skills_inner">
+        <p class="title">Backend & Server-Side</p>
+        <ul class="hidden_text">
+            <li>PHP</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>Server Configuration (basic)</li>
+        </ul>
+       </div>
+       <div class="skills_inner">
+        <p class="title">Databases</p>
+        <ul class="hidden_text">
+            <li>SQL</li>
+            <li>PostgreSQL</li>
+            <li>Database Fundamentals</li>
+        </ul>
+       </div>
+       <div class="skills_inner">
+        <p class="title">Frameworks & Libraries</p>
+        <ul class="hidden_text">
+            <li>JQuery</li>
+            <li>React.js</li>
+        </ul>
+       </div>
+       <div class="skills_inner">
+        <p class="title">CMS & Page Builders</p>
+        <ul class="hidden_text">
+            <li>WordPress</li>
+            <li>Elementor</li>
+            <li>Gutenberg (Block Editor)</li>
+            <li>WPBakery</li>
+            <li>Divi Builder</li>
+        </ul>
+       </div>
+       <div class="skills_inner">
+        <p class="title">SEO & Performance</p>
+        <ul class="hidden_text">
+            <li>SEO Optimization</li>
+            <li>Performance Optimization</li>
+        </ul>
+       </div>
+       <div class="skills_inner">
+        <p class="title">Tools & Development Practices</p>
+        <ul class="hidden_text">
+            <li>Git & Version Control</li>
+            <li>Clean & Maintainable Code</li>
+            <li>Cross-Browser Compatibility</li>
+        </ul>
+       </div>
+          <div class="skills_inner">
+        <p class="title">APIs & Authentication</p>
+        <ul class="hidden_text">
+            <li>REST APIs</li>
+            <li>API Integration</li>
+            <li>Credentials-Based Authentication</li>
+        </ul>
+       </div>
+    </div>
+
+    </div>
+
+    <%- include("footer.ejs") %>
+
+   <script>
+    // CUSTOM CURSOR HERE
+    if (window.innerWidth > 1024) {
+    const cursor = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.top = `${e.clientY}px`;
+        cursor.style.left = `${e.clientX}px`;
+    });
+    }
+
+    // HERO TEXT HERE
+    var i = 0;
+    var txt = 'Web Developer'; 
+    var speed = 100;
+
+    function letter() {
+    if (i < txt.length) {
+        document.getElementById("lettering").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(letter, speed);
+    }
+    }
+
+    letter();
+
+    // CONTACT INFO HERE
+    function contact() {
+        const contactInfo = document.getElementById("footer");
+        contactInfo.classList.add("show");
+    }
+
+    function closeContact() {
+        const contactInfo = document.getElementById("footer");
+        contactInfo.classList.remove("show");
+    }
+
+    // SKILLS SECTION MOBILE HERE
+    if (window.innerWidth <= 1024) {
+        const skillsTitles = document.querySelectorAll('.skills_inner .title');
+
+        skillsTitles.forEach(title => {
+            title.addEventListener('click', function () {
+
+                skillsTitles.forEach(otherTitle => {
+                    if (otherTitle !== this) {
+                        otherTitle.nextElementSibling.classList.remove('showText');
+                        otherTitle.classList.remove('active');
+                    }
+                });
+                this.nextElementSibling.classList.toggle('showText');
+                this.classList.toggle('active');
+            });
+        });
+    }
+
+    // MOBILE MENU HERE
+    function mobileMenu() {
+        const mobileMenuOpen = document.querySelector(".header_main_mobile");
+        mobileMenuOpen.classList.toggle("show");
+        const burgenIcon = document.querySelector(".burger");
+        burgenIcon.classList.toggle("show");
+    }
+
+    const mobileMenuItems = document.querySelector('.header_main_mobile');
+    const menuItems = mobileMenuItems.querySelectorAll('a, span'); 
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenuItems.classList.remove('show');
+        });
+    });
+
+
+
+   </script> 
+ 
+</body>
+</html>
