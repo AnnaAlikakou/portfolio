@@ -194,6 +194,8 @@
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
             mobileMenuItems.classList.remove('show');
+            const burgenIcon = document.querySelector(".burger");
+            burgenIcon.classList.toggle("show");
         });
     });
 
