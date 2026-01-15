@@ -207,6 +207,7 @@ body {
     width: 100%;
     height: auto;
     max-width: 300px;
+    max-height: 300px;
     animation: slideInLeft 1s forwards ease-in-out;
     /* visibility: hidden; */
 }
@@ -244,6 +245,7 @@ body {
     }
     .hero img {
         max-width: 200px;
+        max-height: 200px;
     }
 }
 @media (max-width: 767px) {
@@ -255,6 +257,7 @@ body {
     }
     .hero img {
         max-width: 200px;
+        max-height: 200px;
     }
     .hero .right {
         line-height: 40px;
